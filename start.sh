@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# switch to root user
-sudo -i
-
+# promt the user for input about firefox install
+echo "install firefox ?"
+read -p "[y/n]: " input
 
 # remove snap packages and snap service all together
 remove_snap() {
@@ -57,4 +57,10 @@ install_firefox() {
 }
 
 remove_snap
-install_firefox
+
+# Check the input
+if [[ "$input" == "y" ]]; then
+    install_firefox
+fi
+
+systemctl reboot
