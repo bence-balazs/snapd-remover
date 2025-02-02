@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # promt the user for input about firefox install
 echo "install firefox ?"
@@ -59,7 +60,7 @@ install_firefox() {
 remove_snap
 
 # Check the input
-if [[ "$input" == "y" ]]; then
+if [ ${input} = "y" ]; then
     install_firefox
 fi
 
